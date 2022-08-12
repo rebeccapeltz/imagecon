@@ -21,8 +21,8 @@ const Navigation = () => {
       icon: '📹',
       subItems: [
         {
-          text: 'video 1',
-          href: '/',
+          text: 'Video Player',
+          href: '/video-player-demo',
         },
         {
           text: 'video 2',
