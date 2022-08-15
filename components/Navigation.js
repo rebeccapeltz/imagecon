@@ -25,8 +25,8 @@ const Navigation = () => {
           href: '/video-player-demo',
         },
         {
-          text: 'video 2',
-          href: '/',
+          text: 'Advanced Video component ',
+          href: '/advanced-video',
         },
       ],
     },

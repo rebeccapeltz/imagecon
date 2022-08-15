@@ -26,7 +26,6 @@ export default function UploadWidgetDemo() {
         body,
       })
     ).json();
-    console.log('response', response);
     setPublicId(response.public_id);
     setIsImageLoading(false);
   }
