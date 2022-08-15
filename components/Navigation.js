@@ -14,6 +14,10 @@ const Navigation = () => {
           text: 'API endpoint',
           href: '/api-upload-demo',
         },
+        {
+          text: 'Image Gallery',
+          href: '/image-gallery',
+        },
       ],
     },
     {
