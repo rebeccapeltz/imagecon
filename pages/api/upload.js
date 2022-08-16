@@ -14,7 +14,7 @@ cloudinary.config({
   api_secret: process.env.API_SECRET,
 });
 
-const promiseParseForm = (req) => {
+const promisifyFormParser = (req) => {
   const form = new formidable.IncomingForm();
   return new Promise((resolve, reject) => {
     form.parse(req, (error, fields, files) => {
@@ -28,7 +28,7 @@ const promiseParseForm = (req) => {
 };
 
 const postHandler = async (req, res) => {
-  const { files } = await promiseParseForm(req);
+  const { files } = await promisifyFormParser(req);
   const response = await uploadToCloudinary(files.file);
   return res.status(201).send(response);
 };
