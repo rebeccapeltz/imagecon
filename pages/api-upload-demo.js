@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import CloudinaryImage from '../components/CloudinaryImage';
+import CloudinaryTransformator from '../components/CloudinaryTransformator';
+import Placeholder from '../components/Placeholder';
 
 export default function UploadWidgetDemo() {
   const [image, setImage] = useState(null);
@@ -20,14 +21,18 @@ export default function UploadWidgetDemo() {
     event.preventDefault();
     const body = new FormData();
     body.append('file', image);
-    const response = await (
-      await fetch('/api/upload', {
-        method: 'POST',
-        body,
-      })
-    ).json();
-    setPublicId(response.public_id);
-    setIsImageLoading(false);
+    try {
+      const response = await (
+        await fetch('/api/upload', {
+          method: 'POST',
+          body,
+        })
+      ).json();
+      setPublicId(response.public_id);
+      setIsImageLoading(false);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   return (
@@ -35,13 +40,9 @@ export default function UploadWidgetDemo() {
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row">
           {publicId ? (
-            <CloudinaryImage publicId={publicId} />
+            <CloudinaryTransformator publicId={publicId} />
           ) : (
-            <div className="max-w-sm rounded-lg shadow-2xl">
-              <div className={`${isImageLoading ? 'animate-pulse' : ''} flex`}>
-                <div className="rounded-lg bg-blue-400 h-56 w-56 dtext-blue-500 items-center justify-center"></div>
-              </div>
-            </div>
+            <Placeholder loading={isImageLoading} />
           )}
           <div>
             <h1 className="text-5xl font-bold">Cloudinary API Upload</h1>

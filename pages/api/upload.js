@@ -14,22 +14,37 @@ cloudinary.config({
   api_secret: process.env.API_SECRET,
 });
 
-const postHandler = async (req, res) => {
+const promiseParseForm = (req) => {
   const form = new formidable.IncomingForm();
-  form.parse(req, async function (err, fields, files) {
-    const response = await uploadToCloudinary(files.file);
-    return res.status(201).send(response);
+  return new Promise((resolve, reject) => {
+    form.parse(req, (error, fields, files) => {
+      if (error) {
+        reject(error);
+      } else {
+        resolve({ files });
+      }
+    });
   });
 };
 
+const postHandler = async (req, res) => {
+  const { files } = await promiseParseForm(req);
+  const response = await uploadToCloudinary(files.file);
+  return res.status(201).send(response);
+};
+
 const uploadToCloudinary = async (file) => {
-  const results = await cloudinary.uploader.upload(file.filepath);
-  await fs.unlinkSync(file.filepath);
-  return results;
+  try {
+    const results = await cloudinary.uploader.upload(file.filepath);
+    await fs.unlinkSync(file.filepath);
+    return results;
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    postHandler(req, res);
+    return postHandler(req, res);
   }
 }

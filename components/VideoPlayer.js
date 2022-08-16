@@ -28,6 +28,7 @@ export default function VideoPlayer({ source }) {
 
   return (
     <>
+      {/* The below will hopefully work one day */}
       {/* <Script
         src="_next/static/chunks/cld-video-player.min.js"
         onLoad={() => {
