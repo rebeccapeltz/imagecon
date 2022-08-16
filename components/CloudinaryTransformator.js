@@ -11,8 +11,9 @@ import { Position } from '@cloudinary/url-gen/qualifiers';
 import { image } from '@cloudinary/url-gen/qualifiers/source';
 import { opacity, brightness } from '@cloudinary/url-gen/actions/adjust';
 import { compass } from '@cloudinary/url-gen/qualifiers/gravity';
+import { AdvancedImage } from '@cloudinary/react';
 
-const CloudinaryImage = ({ publicId, gallery = false }) => {
+const CloudinaryTransformator = ({ publicId, gallery = false }) => {
   const cld = new Cloudinary({
     cloud: {
       cloudName: process.env.NEXT_PUBLIC_CLOUD_NAME,
@@ -36,12 +37,10 @@ const CloudinaryImage = ({ publicId, gallery = false }) => {
       )
       .delivery(format('auto'))
       .delivery(quality('auto'));
-    const myURL = myImage.toURL();
     return (
-      <img
+      <AdvancedImage
+        cldImg={myImage}
         className="max-w-sm rounded-lg shadow-2xl"
-        src={myURL}
-        alt="Cloudinary Sample Image"
       />
     );
   }
@@ -53,13 +52,11 @@ const CloudinaryImage = ({ publicId, gallery = false }) => {
     )
     .delivery(format('auto'))
     .delivery(quality('auto'));
-  const myURL = myImage.toURL();
   return (
-    <img
+    <AdvancedImage
+      cldImg={myImage}
       className="max-w-sm rounded-lg shadow-2xl"
-      src={myURL}
-      alt="Cloudinary Sample Image"
     />
   );
 };
-export default CloudinaryImage;
+export default CloudinaryTransformator;

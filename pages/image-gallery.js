@@ -1,17 +1,25 @@
-import CloudinaryImage from '../components/CloudinaryImage';
-import { Cloudinary } from '@cloudinary/url-gen';
-
+import CloudinaryTransformator from '../components/CloudinaryTransformator';
+import { AdvancedImage } from '@cloudinary/react';
+import DisplayError from '../components/DisplayError';
 import useSWR from 'swr';
 import Loading from '../components/Loading';
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
-export default function ImageGallery() {
-  const cld = new Cloudinary({
-    cloud: {
-      cloudName: process.env.NEXT_PUBLIC_CLOUD_NAME,
-    },
-  });
 
+const fetcher = async (url) => {
+  const res = await fetch(url);
+  if (!res.ok) {
+    const error = new Error('An error occurred while fetching the data.');
+    error.info = await res.json();
+    error.status = res.status;
+    throw error;
+  }
+
+  return res.json();
+};
+
+export default function ImageGallery() {
+  console.log(CloudinaryTransformator);
   const { data, error } = useSWR('/api/gallery', fetcher);
+  if (error) return <DisplayError error={error.info} />;
   if (!data) return <Loading />;
 
   return (
@@ -23,7 +31,10 @@ export default function ImageGallery() {
               className="xl:w-1/3 lg:w-1/2 md:w-1/2 sm:w-1/2 xs:w-full sm:w-full w-full mb-4 sm:mb-4 px-2"
               key={i}
             >
-              <CloudinaryImage publicId={result.public_id} gallery={true} />
+              <CloudinaryTransformator
+                publicId={result.public_id}
+                gallery={true}
+              />
             </div>
           );
         })}
