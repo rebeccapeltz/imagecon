@@ -11,7 +11,7 @@ const Navigation = () => {
           href: '/upload-widget-demo',
         },
         {
-          text: 'API endpoint',
+          text: 'Upload via an API Endpoint',
           href: '/api-upload-demo',
         },
         {
@@ -29,7 +29,7 @@ const Navigation = () => {
           href: '/video-player-demo',
         },
         {
-          text: 'Advanced Video component ',
+          text: 'Advanced Video Component',
           href: '/advanced-video',
         },
       ],
