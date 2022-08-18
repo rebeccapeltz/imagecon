@@ -98,8 +98,13 @@ const uploadVideoAssets = async (file, options = {}) => {
       unique_filename: false,
       eager: [
         {
+          fetch_format: 'webm',
+          video_codec: 'vp9',
+          format: '',
           width: 800,
         },
+        { fetch_format: 'mp4', video_codec: 'h265', format: '', width: 800 },
+        { fetch_format: 'mp4', video_codec: 'h264', format: '', width: 800 },
       ],
       eager_async: true,
     };
