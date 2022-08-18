@@ -76,6 +76,7 @@ const uploadImageAssets = async (file, options = {}) => {
   counter++;
   options = {
     ...options,
+    tags: ['coffee'],
     public_id: `coffee-${counter}`,
   };
   const path = `${__dirname}/${pathToImageFiles}/${file}`;

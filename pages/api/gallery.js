@@ -9,8 +9,13 @@ export default async function handler(req, res) {
   try {
     const url = cloudinary.url('coffee.json', {
       type: 'list',
+      version: Date.now(),
     });
-    const { resources: results } = await (await fetch(url)).json();
+    const response = await fetch(url, {
+      headers: { 'Content-Type': 'application/json' },
+    });
+    const { resources: results } = await response.json();
+
     return res.status(200).json({
       results,
     });
