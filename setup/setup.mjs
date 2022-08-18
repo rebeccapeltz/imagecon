@@ -89,17 +89,26 @@ const uploadImageAssets = async (file, options = {}) => {
 };
 
 const uploadVideoAssets = async (file, options = {}) => {
-  options = {
-    ...options,
-    resource_type: 'video',
-    use_filename: true,
-    unique_filename: false,
-    eager: [
-      {
-        width: 800,
-      },
-    ],
-  };
+  if (file.includes('colombia')) {
+    options = {
+      ...options,
+      resource_type: 'video',
+      use_filename: true,
+      unique_filename: false,
+      eager: [
+        {
+          width: 800,
+        },
+      ],
+    };
+  } else {
+    options = {
+      ...options,
+      resource_type: 'video',
+      use_filename: true,
+      unique_filename: false,
+    };
+  }
   const path = `${__dirname}/${pathToVideoFiles}/${file}`;
   try {
     const results = await cloudinary.uploader.upload(path, options);
