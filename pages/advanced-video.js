@@ -1,7 +1,12 @@
 import { AdvancedVideo } from '@cloudinary/react';
-import { Cloudinary } from '@cloudinary/url-gen';
+import { Cloudinary, Transformation } from '@cloudinary/url-gen';
+import { scale } from '@cloudinary/url-gen/actions/resize';
 import { fill } from '@cloudinary/url-gen/actions/resize';
 import { Gravity } from '@cloudinary/url-gen/qualifiers';
+import { source } from '@cloudinary/url-gen/actions/overlay';
+import { image } from '@cloudinary/url-gen/qualifiers/source';
+import { Position } from '@cloudinary/url-gen/qualifiers';
+import { compass } from '@cloudinary/url-gen/qualifiers/gravity';
 
 export default function AdvancedVideoDemo() {
   const cld = new Cloudinary({
@@ -9,9 +14,19 @@ export default function AdvancedVideoDemo() {
       cloudName: process.env.NEXT_PUBLIC_CLOUD_NAME,
     },
   });
-
-  const myVideo = cld.video('colombia');
-  myVideo.resize(fill().width(250).height(250).gravity(Gravity.autoGravity()));
+  const myVideo = cld.video('imagecon/ship');
+  myVideo
+    .resize(fill().width(500).height(500).gravity(Gravity.autoGravity()))
+    // .resize(fill().width(500).height(500))
+    .overlay(
+      source(
+        image('imagecon/cloudinary-blue').transformation(
+          new Transformation().resize(scale(90))
+        )
+      ).position(
+        new Position().gravity(compass('north_east')).offsetX(5).offsetY(5)
+      )
+    );
 
   return (
     <>
@@ -21,6 +36,14 @@ export default function AdvancedVideoDemo() {
             <h1 className="text-5xl font-bold p-10">
               Advanced Video component
             </h1>
+            <div className="m-10">
+              <a
+                className="link"
+                href="https://res.cloudinary.com/tamas-demo/video/upload/imagecon/ship.mp4"
+              >
+                Original version
+              </a>
+            </div>
             <AdvancedVideo
               className="mx-auto"
               cldVid={myVideo}

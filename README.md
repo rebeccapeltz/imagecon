@@ -1,34 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Get Started
 
-## Getting Started
+## Pre-requisites
 
-First, run the development server:
+- Please make sure to run the latest available [Node LTS](https://nodejs.org/en/download/) (`v16.x.x`).
 
-```bash
-npm run dev
-# or
-yarn dev
+## Gather your environment variables
+
+Please login to your [Cloudinary](https://cloudinary.com/users/login) account and note your `CLOUD_NAME`, `API_KEY` and `API_SECRET` values.
+
+## Add your environment variables
+
+- Create the following two files:
+
+  - `setup/.env`
+  - `./.env.local`
+
+- Add the following content to `setup/.env` replacing `...` with the values collected in the previous step.
+
+```
+CLOUD_NAME=...
+API_KEY=...
+API_SECRET=...
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Add the following content to `.env.local` replacing `...` with the values collected in the previous step.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```
+NEXT_PUBLIC_CLOUD_NAME=...
+API_KEY=...
+API_SECRET=...
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Run the setup script
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+** Please make sure that you DO NOT have a folder `imagecon` already under your account. If you do, please contact an instructor first before running the below setup script. **
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Once the environment variables have been set, please run `npm run setup` from the root of the project. This will setup all the necessary assets under your Cloudinary profile, into a folder called `imagecon`.

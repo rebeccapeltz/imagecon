@@ -1,17 +1,23 @@
-{
-  /* eslint-disable @next/next/no-img-element */
-}
+import { AdvancedImage } from '@cloudinary/react';
+import { Cloudinary } from '@cloudinary/url-gen';
+import { format, quality } from '@cloudinary/url-gen/actions/delivery';
+
 import Link from 'next/link';
 
 export default function FourOhFour() {
+  const cld = new Cloudinary({
+    cloud: {
+      cloudName: process.env.NEXT_PUBLIC_CLOUD_NAME,
+    },
+  });
+  const fourOhFourImage = cld
+    .image('imagecon/404')
+    .delivery(format('auto'))
+    .delivery(quality('auto'));
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col lg:flex-row-reverse">
-        <img
-          src="https://res.cloudinary.com/tamas-demo/image/upload/v1659687906/imagecon/404.jpg"
-          alt="Page not found"
-          className="max-w-sm rounded-lg shadow-2xl"
-        />
+        <AdvancedImage cldImg={fourOhFourImage} />
         <div>
           <h1 className="text-5xl font-bold">404</h1>
           <p className="py-6">This is not the page you are looking for.</p>

@@ -1,4 +1,3 @@
-import Script from 'next/script';
 import { useEffect, useState } from 'react';
 import 'cloudinary-video-player/dist/cld-video-player.min.css';
 
@@ -29,6 +28,7 @@ export default function VideoPlayer({ source }) {
   return (
     <>
       {/* The below will hopefully work one day */}
+      {/* import Script from 'next/script'; */}
       {/* <Script
         src="_next/static/chunks/cld-video-player.min.js"
         onLoad={() => {

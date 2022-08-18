@@ -17,7 +17,6 @@ const fetcher = async (url) => {
 };
 
 export default function ImageGallery() {
-  console.log(CloudinaryTransformator);
   const { data, error } = useSWR('/api/gallery', fetcher);
   if (error) return <DisplayError error={error.info} />;
   if (!data) return <Loading />;

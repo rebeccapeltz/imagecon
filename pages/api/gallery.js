@@ -15,6 +15,10 @@ export default async function handler(req, res) {
       results,
     });
   } catch (error) {
-    return res.status(500).json(error.message);
+    return res
+      .status(500)
+      .json(
+        'Cannot generate image gallery. Make sure that images tagged as "coffee" are available in your Media Library.'
+      );
   }
 }
