@@ -100,6 +100,7 @@ const uploadVideoAssets = async (file, options = {}) => {
           width: 800,
         },
       ],
+      eager_async: true,
     };
   } else {
     options = {
