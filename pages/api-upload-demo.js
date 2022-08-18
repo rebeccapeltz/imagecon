@@ -62,7 +62,7 @@ export default function UploadWidgetDemo() {
                   type="file"
                   name="file"
                 />
-                <button className="btn btn-primary btn-sm">Upload Files</button>
+                <button className="btn btn-primary btn-sm">Upload File</button>
               </p>
             </form>
           </div>

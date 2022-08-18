@@ -35,7 +35,9 @@ const postHandler = async (req, res) => {
 
 const uploadToCloudinary = async (file) => {
   try {
-    const results = await cloudinary.uploader.upload(file.filepath);
+    const results = await cloudinary.uploader.upload(file.filepath, {
+      upload_preset: 'imagecon-uw',
+    });
     await fs.unlinkSync(file.filepath);
     return results;
   } catch (error) {
