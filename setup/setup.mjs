@@ -89,6 +89,7 @@ const uploadImageAssets = async (file, options = {}) => {
 };
 
 const uploadVideoAssets = async (file, options = {}) => {
+  console.log('file', file, 'file.includes', file.includes('colombia'));
   if (file.includes('colombia')) {
     options = {
       ...options,

@@ -22,7 +22,7 @@ export default function VideoPlayer({ source }) {
     const demoplayer = window.cloudinary.videoPlayer('video-player', {
       cloud_name: process.env.NEXT_PUBLIC_CLOUD_NAME,
     });
-    demoplayer.source(source);
+    demoplayer.source(source, { transformation: { width: 800 } });
   }, [jsLoaded, source]);
 
   return (
