@@ -106,8 +106,7 @@ const uploadVideoAssets = async (file, options = {}) => {
         { fetch_format: 'mp4', video_codec: 'h264', width: 800, height: 450 },
       ],
       eager_async: true,
-      eager_notification_url:
-        'https://webhook.site/68a8ace8-237d-4353-8e2b-e865fc1bbe7a',
+      // eager_notification_url: use webhook.site
     };
   } else {
     options = {
