@@ -3,7 +3,7 @@
 ## Pre-requisites
 
 - Please make sure to run the latest available [Node LTS](https://nodejs.org/en/download/) (`v16.x.x`). (Use `node -v` to see the currently installed version)
-- Install the project dependencies by executing `npm i ` in your terminal.
+- Install the project dependencies by executing `npm i` in your terminal.
 
 ## Gather your environment variables
 
