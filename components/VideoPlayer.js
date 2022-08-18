@@ -22,23 +22,14 @@ export default function VideoPlayer({ source }) {
     const demoplayer = window.cloudinary.videoPlayer('video-player', {
       cloud_name: process.env.NEXT_PUBLIC_CLOUD_NAME,
     });
-    demoplayer.source(source, { transformation: { width: 800 } });
+    demoplayer.source(source, {
+      transformation: { width: 800, fetch_format: 'auto' },
+    });
   }, [jsLoaded, source]);
 
   return (
     <>
-      {/* The below will hopefully work one day */}
-      {/* import Script from 'next/script'; */}
-      {/* <Script
-        src="_next/static/chunks/cld-video-player.min.js"
-        onLoad={() => {
-          const demoplayer = window.cloudinary.videoPlayer('video-player', {
-            cloud_name: process.env.NEXT_PUBLIC_CLOUD_NAME,
-          });
-          demoplayer.source(source);
-        }}
-      /> */}
-      <div style={{ maxWidth: '800px' }}>
+      <div style={{ width: '800px' }}>
         <video
           id="video-player"
           controls

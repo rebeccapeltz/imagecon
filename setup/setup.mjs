@@ -89,7 +89,7 @@ const uploadImageAssets = async (file, options = {}) => {
 };
 
 const uploadVideoAssets = async (file, options = {}) => {
-  if (file.includes('colombia')) {
+  if (file.includes('puntacana')) {
     options = {
       ...options,
       resource_type: 'video',
@@ -99,13 +99,15 @@ const uploadVideoAssets = async (file, options = {}) => {
         {
           fetch_format: 'webm',
           video_codec: 'vp9',
-          format: '',
           width: 800,
+          height: 450,
         },
-        { fetch_format: 'mp4', video_codec: 'h265', format: '', width: 800 },
-        { fetch_format: 'mp4', video_codec: 'h264', format: '', width: 800 },
+        { fetch_format: 'mp4', video_codec: 'h265', width: 800, height: 450 },
+        { fetch_format: 'mp4', video_codec: 'h264', width: 800, height: 450 },
       ],
       eager_async: true,
+      eager_notification_url:
+        'https://webhook.site/68a8ace8-237d-4353-8e2b-e865fc1bbe7a',
     };
   } else {
     options = {
