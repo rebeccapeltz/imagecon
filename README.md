@@ -55,4 +55,6 @@ signing mode: unsigned
 folder: imagecon
 ```
 
-Then, duplicate this preset rename it to `tag-as-coffee`. Then select `Media Analysis and AI` and under `Tags` add `coffee`.
+Make sure to hit save after your edits.
+
+Then, duplicate the `imagecon-uw` preset, rename the duplicate to `tag-as-coffee`. Edit its settings, find `Media Analysis and AI` and under `Tags` add `coffee`. Make sure to hit save after your edits.
