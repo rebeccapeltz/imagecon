@@ -94,6 +94,11 @@ const uploadVideoAssets = async (file, options = {}) => {
     resource_type: 'video',
     use_filename: true,
     unique_filename: false,
+    eager: [
+      {
+        width: 800,
+      },
+    ],
   };
   const path = `${__dirname}/${pathToVideoFiles}/${file}`;
   try {
@@ -103,52 +108,6 @@ const uploadVideoAssets = async (file, options = {}) => {
     console.error(error);
   }
 };
-
-// const uploadToCloudinary = async (file, ...params) => {
-//   const [param] = params;
-//   const { resource_type, category } = param;
-//   let uploadOptions = {
-//     overwrite: true,
-//   };
-//   category !== 'ui' ? counter++ : '';
-//   if (resource_type === 'image') {
-//     uploadOptions = {
-//       ...uploadOptions,
-//       resource_type: 'image',
-//     };
-//   } else {
-//     uploadOptions = {
-//       ...uploadOptions,
-//       resource_type: resource_type,
-//     };
-//   }
-
-//   if (category !== 'ui') {
-//     uploadOptions = {
-//       ...uploadOptions,
-//       public_id: `imagecon/coffee-${counter}`,
-//       tags: ['coffee'],
-//     };
-//   } else {
-//     uploadOptions = {
-//       ...uploadOptions,
-//       folder: 'imagecon',
-//       use_filename: true,
-//       unique_filename: false,
-//     };
-//   }
-//   let finalPath;
-//   if (category === 'ui') {
-//     finalPath = `${__dirname}/${pathToUIFiles}`;
-//   } else {
-//     finalPath = `${__dirname}/${pathToImageFiles}`;
-//   }
-
-//   if (resource_type === 'video') {
-//     finalPath = `${__dirname}/${pathToVideoFiles}`;
-//   }
-
-// };
 
 imageFilesToUpload.forEach(async (file) => {
   const response = await uploadImageAssets(file, uploadOptions);
