@@ -58,3 +58,11 @@ folder: imagecon
 Make sure to hit save after your edits.
 
 Then, duplicate the `imagecon-uw` preset, rename the duplicate to `tag-as-coffee`. Edit its settings, find `Media Analysis and AI` and under `Tags` add `coffee`. Make sure to hit save after your edits.
+
+# Start the project
+
+To start the project in development mode, please run `npm run dev` from the CLI.
+
+## Deployment
+
+There are many ways to deploy a Next.js project and the [Next.js documentation](https://nextjs.org/docs/deployment) provides some options. To create a production build and serve it up locally for testing you can first run `npm run build` and then `npm start` from the CLI.

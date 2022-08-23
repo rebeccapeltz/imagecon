@@ -3,13 +3,12 @@ import { Cloudinary } from '@cloudinary/url-gen';
 import { format, quality } from '@cloudinary/url-gen/actions/delivery';
 
 import Link from 'next/link';
-
+const cld = new Cloudinary({
+  cloud: {
+    cloudName: process.env.NEXT_PUBLIC_CLOUD_NAME,
+  },
+});
 export default function FourOhFour() {
-  const cld = new Cloudinary({
-    cloud: {
-      cloudName: process.env.NEXT_PUBLIC_CLOUD_NAME,
-    },
-  });
   const fourOhFourImage = cld
     .image('imagecon/404')
     .delivery(format('auto'))

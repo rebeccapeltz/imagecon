@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 import path from 'path';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-dotenv.config({ path: `${__dirname}/.env` });
+dotenv.config({ path: path.join(__dirname, '../.env.local') });
 import chalk from 'chalk';
 import { v2 as cloudinary } from 'cloudinary';
 import fs from 'fs';

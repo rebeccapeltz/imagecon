@@ -13,12 +13,13 @@ import { opacity, brightness } from '@cloudinary/url-gen/actions/adjust';
 import { compass } from '@cloudinary/url-gen/qualifiers/gravity';
 import { AdvancedImage } from '@cloudinary/react';
 
+const cld = new Cloudinary({
+  cloud: {
+    cloudName: process.env.NEXT_PUBLIC_CLOUD_NAME,
+  },
+});
+
 const CloudinaryTransformator = ({ publicId, gallery = false }) => {
-  const cld = new Cloudinary({
-    cloud: {
-      cloudName: process.env.NEXT_PUBLIC_CLOUD_NAME,
-    },
-  });
   if (gallery) {
     const myImage = cld
       .image(publicId)
