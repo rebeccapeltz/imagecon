@@ -1,6 +1,3 @@
-{
-  /* eslint-disable @next/next/no-img-element */
-}
 import { Cloudinary, Transformation } from '@cloudinary/url-gen';
 import { thumbnail, scale } from '@cloudinary/url-gen/actions/resize';
 import { focusOn } from '@cloudinary/url-gen/qualifiers/gravity';

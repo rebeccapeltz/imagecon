@@ -1,12 +1,12 @@
-import dotenv from 'dotenv';
-import path from 'path';
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-dotenv.config({ path: path.join(__dirname, '../.env.local') });
 import chalk from 'chalk';
 import { v2 as cloudinary } from 'cloudinary';
+import dotenv from 'dotenv';
 import fs from 'fs';
-import { fileURLToPath } from 'url';
+import path from 'path';
 import { exit } from 'process';
+import { fileURLToPath } from 'url';
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+dotenv.config({ path: path.join(__dirname, '../.env.local') });
 
 const log = console.log;
 
@@ -25,7 +25,7 @@ if (Object.values(config).includes(undefined)) {
   );
   exit(1);
 }
-
+// this methid lists the files that we are uploading
 const listFilesToUpload = (path) => {
   const files = fs.readdirSync(`${__dirname}/${path}`);
   const filesToUpload = files.filter((file) => {
@@ -42,20 +42,22 @@ const listFilesToUpload = (path) => {
   });
   return filesToUpload;
 };
-
+// path to images, UI images and video files
 const pathToImageFiles = 'assets/images';
 const pathToUIFiles = 'assets/ui';
 const pathToVideoFiles = 'assets/videos';
 
+// listing the appropriate files
 const imageFilesToUpload = listFilesToUpload(pathToImageFiles);
 const uiFilesToUpload = listFilesToUpload(pathToUIFiles);
 const videoFilesToUpload = listFilesToUpload(pathToVideoFiles);
 
+// generic upload options
 const uploadOptions = {
   overwrite: true,
   folder: 'imagecon',
 };
-
+// uploading UI assets with appended upload options
 const uploadUIAssets = async (file, options = {}) => {
   options = {
     ...options,
@@ -71,6 +73,7 @@ const uploadUIAssets = async (file, options = {}) => {
   }
 };
 
+// uploading image assets with appended upload options
 let counter = 0;
 const uploadImageAssets = async (file, options = {}) => {
   counter++;
@@ -88,6 +91,7 @@ const uploadImageAssets = async (file, options = {}) => {
   }
 };
 
+// uploading video assets with appended upload options
 const uploadVideoAssets = async (file, options = {}) => {
   if (file.includes('puntacana')) {
     options = {
@@ -124,7 +128,7 @@ const uploadVideoAssets = async (file, options = {}) => {
     console.error(error);
   }
 };
-
+// calling the upload for all image files
 imageFilesToUpload.forEach(async (file) => {
   const response = await uploadImageAssets(file, uploadOptions);
   log(
@@ -135,7 +139,7 @@ imageFilesToUpload.forEach(async (file) => {
     )}`
   );
 });
-
+// calling the upload for all UI image files
 uiFilesToUpload.forEach(async (file) => {
   const response = await uploadUIAssets(file, uploadOptions);
   log(
@@ -146,7 +150,7 @@ uiFilesToUpload.forEach(async (file) => {
     )}`
   );
 });
-
+// calling the upload for all video files
 videoFilesToUpload.forEach(async (file) => {
   const response = await uploadVideoAssets(file, uploadOptions);
   log(

@@ -1,13 +1,17 @@
-import CloudinaryTransformator from '../components/CloudinaryTransformator';
 import Script from 'next/script';
 import { useState } from 'react';
-import UploadWidget from '../components/UploadWidget';
+import CloudinaryTransformator from '../components/CloudinaryTransformator';
 import Placeholder from '../components/Placeholder';
+import UploadWidget from '../components/UploadWidget';
 
 export default function UploadWidgetDemo() {
   const [publicId, setPublicId] = useState('');
   const [isImageLoading, setIsImageLoading] = useState(false);
 
+  /*
+  Exercise 1: Add the Upload Widget drop-in script via the Next.js <Script> component
+  Import the UploadWidget from the components folder
+  */
   return (
     <>
       <Script src="https://upload-widget.cloudinary.com/global/all.js" />

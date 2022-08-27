@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
 import 'cloudinary-video-player/dist/cld-video-player.min.css';
+import { useEffect, useState } from 'react';
 
 export default function VideoPlayer({ source }) {
   const [jsLoaded, setJSLoaded] = useState(false);

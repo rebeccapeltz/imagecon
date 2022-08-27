@@ -1,7 +1,6 @@
-import CloudinaryTransformator from '../components/CloudinaryTransformator';
-import { AdvancedImage } from '@cloudinary/react';
-import DisplayError from '../components/DisplayError';
 import useSWR from 'swr';
+import CloudinaryTransformator from '../components/CloudinaryTransformator';
+import DisplayError from '../components/DisplayError';
 import Loading from '../components/Loading';
 
 const fetcher = async (url) => {

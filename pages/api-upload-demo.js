@@ -1,3 +1,6 @@
+/*
+Before starting with this file, make sure that the API endpoint has been added (api/upload.js)
+*/
 import { useState } from 'react';
 import CloudinaryTransformator from '../components/CloudinaryTransformator';
 import Placeholder from '../components/Placeholder';
@@ -16,7 +19,9 @@ export default function UploadWidgetDemo() {
       setCreateObjectURL(URL.createObjectURL(img));
     }
   }
-
+  /*
+  Exercise: make a POST request (via fetch) to the endpoint responsable for the upload
+  */
   async function uploadToServer(event) {
     event.preventDefault();
     const body = new FormData();
@@ -50,7 +55,9 @@ export default function UploadWidgetDemo() {
               Click the button below to upload an image to your Cloudinary
               account. It will appear on the left, optimised after upload.
             </p>
-
+            {/* 
+            Exercise: add the onSubmit handler (uploadToServer)
+             */}
             <form
               method="post"
               onChange={uploadToClient}

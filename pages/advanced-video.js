@@ -1,12 +1,10 @@
 import { AdvancedVideo } from '@cloudinary/react';
 import { Cloudinary, Transformation } from '@cloudinary/url-gen';
-import { scale } from '@cloudinary/url-gen/actions/resize';
-import { fill } from '@cloudinary/url-gen/actions/resize';
-import { Gravity } from '@cloudinary/url-gen/qualifiers';
 import { source } from '@cloudinary/url-gen/actions/overlay';
-import { image } from '@cloudinary/url-gen/qualifiers/source';
-import { Position } from '@cloudinary/url-gen/qualifiers';
+import { fill, scale } from '@cloudinary/url-gen/actions/resize';
+import { Gravity, Position } from '@cloudinary/url-gen/qualifiers';
 import { compass } from '@cloudinary/url-gen/qualifiers/gravity';
+import { image } from '@cloudinary/url-gen/qualifiers/source';
 
 export default function AdvancedVideoDemo() {
   const cld = new Cloudinary({

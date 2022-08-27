@@ -1,3 +1,18 @@
+/*
+For completing this exercise, please make sure that you've created an upload preset (as per the README)
+
+Navigate to Settings -> Upload and find the upload preset section.
+
+Create the following two presets:
+
+```
+preset name: imagecon-uw
+signing mode: unsigned
+folder: imagecon
+```
+
+Make sure to hit save after your edits.
+*/
 import { v2 as cloudinary } from 'cloudinary';
 import formidable from 'formidable';
 import fs from 'fs';

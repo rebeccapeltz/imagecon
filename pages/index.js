@@ -1,7 +1,7 @@
 import { AdvancedImage } from '@cloudinary/react';
 import { Cloudinary } from '@cloudinary/url-gen';
-import { fit } from '@cloudinary/url-gen/actions/resize';
 import { format, quality } from '@cloudinary/url-gen/actions/delivery';
+import { fit } from '@cloudinary/url-gen/actions/resize';
 const cld = new Cloudinary({
   cloud: {
     cloudName: process.env.NEXT_PUBLIC_CLOUD_NAME,
