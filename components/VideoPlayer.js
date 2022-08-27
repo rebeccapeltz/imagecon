@@ -6,6 +6,7 @@ export default function VideoPlayer({ source }) {
   useEffect(() => {
     if (!jsLoaded) {
       const script = document.createElement('script');
+      // in order for the below to work, check next.config.js
       script.src = '_next/static/chunks/cld-video-player.min.js';
       script.async = true;
       script.addEventListener('load', () => setJSLoaded(true));
@@ -19,10 +20,10 @@ export default function VideoPlayer({ source }) {
 
   useEffect(() => {
     if (!jsLoaded) return;
-    const demoplayer = window.cloudinary.videoPlayer('video-player', {
+    const videoplayer = window.cloudinary.videoPlayer('video-player', {
       cloud_name: process.env.NEXT_PUBLIC_CLOUD_NAME,
     });
-    demoplayer.source(source, {
+    videoplayer.source(source, {
       transformation: { width: 800, fetch_format: 'auto' },
     });
   }, [jsLoaded, source]);
