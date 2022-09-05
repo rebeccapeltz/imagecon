@@ -14,7 +14,7 @@ export default function Home() {
     .delivery(format('auto'))
     .delivery(quality('auto'));
   const nextjsLogo = cld
-    .image('imagecon/nextjs-light')
+    .image('imagecon/nextjs')
     .resize(fit().width(450))
     .delivery(format('auto'))
     .delivery(quality('auto'));

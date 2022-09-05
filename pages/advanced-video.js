@@ -38,8 +38,10 @@ export default function AdvancedVideoDemo() {
               <a
                 className="link"
                 href="https://res.cloudinary.com/tamas-demo/video/upload/imagecon/ship.mp4"
+                target="_blank"
+                rel="noreferrer"
               >
-                Original version
+                Watch the original version of the video
               </a>
             </div>
             <AdvancedVideo

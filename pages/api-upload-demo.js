@@ -8,6 +8,7 @@ import Placeholder from '../components/Placeholder';
 export default function UploadWidgetDemo() {
   const [image, setImage] = useState(null);
   const [createObjectURL, setCreateObjectURL] = useState(null);
+  const [uploadButtonEnabled, setUploadButtonEnabled] = useState(false);
   const [publicId, setPublicId] = useState(null);
   const [isImageLoading, setIsImageLoading] = useState(false);
 
@@ -17,6 +18,7 @@ export default function UploadWidgetDemo() {
       const img = event.target.files[0];
       setImage(img);
       setCreateObjectURL(URL.createObjectURL(img));
+      setUploadButtonEnabled(true);
     }
   }
   /*
@@ -69,7 +71,13 @@ export default function UploadWidgetDemo() {
                   type="file"
                   name="file"
                 />
-                <button className="btn btn-primary btn-sm">Upload File</button>
+                {/* <pre>{uploadButtonEnabled.toString()}</pre> */}
+                <button
+                  disabled={!isImageLoading}
+                  className="btn btn-primary btn-sm"
+                >
+                  Upload File
+                </button>
               </p>
             </form>
           </div>
