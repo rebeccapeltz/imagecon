@@ -1,5 +1,5 @@
 import chalk from 'chalk';
-import { v2 as cloudinary } from 'cloudinary';
+import { v2 as cloudinary, config } from 'cloudinary';
 import dotenv from 'dotenv';
 import fs from 'fs';
 import path from 'path';
@@ -9,15 +9,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 dotenv.config({ path: path.join(__dirname, '../.env.local') });
 
 const log = console.log;
-
-const config = cloudinary.config({
-  cloud_name: process.env.CLOUD_NAME,
-  api_key: process.env.API_KEY,
-  api_secret: process.env.API_SECRET,
-  secure: true,
-});
-
-if (Object.values(config).includes(undefined)) {
+config(true);
+if (!process.env.CLOUDINARY_URL) {
   log(
     chalk.red(
       'Please setup your environment variable with CLOUD_NAME, API_KEY and API_SECRET'

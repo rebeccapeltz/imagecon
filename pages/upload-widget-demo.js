@@ -1,6 +1,6 @@
 import Script from 'next/script';
 import { useState } from 'react';
-import CloudinaryTransformator from '../components/CloudinaryTransformator';
+import CldImage from '../components/CldImage';
 import Placeholder from '../components/Placeholder';
 import UploadWidget from '../components/UploadWidget';
 
@@ -19,7 +19,7 @@ export default function UploadWidgetDemo() {
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row">
           {publicId ? (
-            <CloudinaryTransformator publicId={publicId} />
+            <CldImage publicId={publicId} />
           ) : (
             <Placeholder loading={isImageLoading} />
           )}

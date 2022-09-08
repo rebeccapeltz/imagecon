@@ -1,5 +1,5 @@
 import useSWR from 'swr';
-import CloudinaryTransformator from '../components/CloudinaryTransformator';
+import CldImage from '../components/CldImage';
 import DisplayError from '../components/DisplayError';
 import Loading from '../components/Loading';
 
@@ -29,10 +29,7 @@ export default function ImageGallery() {
               className="xl:w-1/3 lg:w-1/2 md:w-1/2 sm:w-1/2 xs:w-full sm:w-full w-full mb-4 sm:mb-4 px-2"
               key={i}
             >
-              <CloudinaryTransformator
-                publicId={result.public_id}
-                gallery={true}
-              />
+              <CldImage publicId={result.public_id} gallery={true} />
             </div>
           );
         })}

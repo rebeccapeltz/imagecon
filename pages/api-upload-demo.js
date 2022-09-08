@@ -2,7 +2,7 @@
 Before starting with this file, make sure that the API endpoint has been added (api/upload.js)
 */
 import { useState } from 'react';
-import CloudinaryTransformator from '../components/CloudinaryTransformator';
+import CldImage from '../components/CldImage';
 import Placeholder from '../components/Placeholder';
 
 export default function UploadWidgetDemo() {
@@ -47,7 +47,7 @@ export default function UploadWidgetDemo() {
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row">
           {publicId ? (
-            <CloudinaryTransformator publicId={publicId} />
+            <CldImage publicId={publicId} />
           ) : (
             <Placeholder loading={isImageLoading} />
           )}
