@@ -7,29 +7,19 @@
 
 ## Gather your environment variables
 
-Please login to your [Cloudinary](https://cloudinary.com/users/login) account and note your `CLOUD_NAME`, `API_KEY` and `API_SECRET` values.
+Please login to your [Cloudinary](https://cloudinary.com/users/login) account and note your `CLOUD_NAME`, and copy `CLOUDINARY_URL` string.
 
 ## Add your environment variables
 
-- Create the following two files:
+- Create the following file:
 
-  - `setup/.env`
   - `./.env.local`
 
-- Add the following content to `setup/.env` replacing `...` with the values collected in the previous step.
-
-```
-CLOUD_NAME=...
-API_KEY=...
-API_SECRET=...
-```
-
-- Add the following content to `.env.local` replacing `...` with the values collected in the previous step. (Note that the value for NEXT_PUBLIC_CLOUD_NAME should be your Cloudinary cloud name.)
+- Add the following content to `./.env.local` replacing `...` with the values collected in the previous step. (Note that the value for NEXT_PUBLIC_CLOUD_NAME should be your Cloudinary cloud name.)
 
 ```
 NEXT_PUBLIC_CLOUD_NAME=...
-API_KEY=...
-API_SECRET=...
+CLOUDINARY_URL=...
 ```
 
 ## Run the setup script

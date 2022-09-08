@@ -11,11 +11,7 @@ dotenv.config({ path: path.join(__dirname, '../.env.local') });
 const log = console.log;
 config(true);
 if (!process.env.CLOUDINARY_URL) {
-  log(
-    chalk.red(
-      'Please setup your environment variable with CLOUD_NAME, API_KEY and API_SECRET'
-    )
-  );
+  log(chalk.red('Please setup your environment variable using CLOUDINARY_URL'));
   exit(1);
 }
 // this methid lists the files that we are uploading
