@@ -111,4 +111,4 @@ During the workshop we'll be using [Discrod]() to communicate and share code and
 
 - Rebecca Peltz [LinkedIn](https://www.linkedin.com/in/rebeccapeltz)
 - Colby Fayock [LinkedIn](https://www.linkedin.com/in/colbyfayock)
-- Tamas Piros | [LinkedIn](https://linkedin.com/in/tpiros)
+- Tamas Piros [LinkedIn](https://linkedin.com/in/tpiros)
