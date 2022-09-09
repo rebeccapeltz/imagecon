@@ -54,7 +54,7 @@ Please login to your [Cloudinary](https://cloudinary.com/users/login) account an
 
   - `.env.local`
 
-- Add the following content to `.env.local` replacing `...` with the values collected in the previous step. (Note that the value for NEXT_PUBLIC_CLOUD_NAME should be your Cloudinary cloud name. Please also note that if copied automatically from the Cloudinary UI, the `CLOUDINARY_URL` prefix will also be copied, there's no need to add that twice)
+- Add the following content to `.env.local` replacing `...` with the values collected in the previous step. (Note that the value for `NEXT_PUBLIC_CLOUD_NAME` should be your Cloudinary cloud name. Please also note that if copied automatically from the Cloudinary UI, the `CLOUDINARY_URL` prefix will also be copied, there's no need to add that twice)
 
 ```
 NEXT_PUBLIC_CLOUD_NAME=...
