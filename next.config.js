@@ -7,7 +7,6 @@ See components/VideoPlayer.js where the cld-video-player.min.js is added to the 
 /** @type {import('next').NextConfig} */
 const CopyPlugin = require('copy-webpack-plugin');
 const nextConfig = {
-  reactStrictMode: true,
   swcMinify: true,
   reactStrictMode: true,
   webpack: function (config) {
