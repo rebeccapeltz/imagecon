@@ -105,7 +105,7 @@ Please find the lesson plan for the workshop below.
 
 # ℹ️ Support
 
-During the workshop we'll be using [Discrod]() to communicate and share code and potentially files. Since you'll be joining the Cloudinary Community Discord, you can get support at the various channels even after the event!
+During the workshop we'll be using [Discord]() to communicate and share code and potentially files. Since you'll be joining the Cloudinary Community Discord, you can get support at the various channels even after the event!
 
 # 👋 Your Instructors
 
