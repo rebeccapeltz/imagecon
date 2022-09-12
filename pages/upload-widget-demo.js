@@ -8,10 +8,6 @@ export default function UploadWidgetDemo() {
   const [publicId, setPublicId] = useState('');
   const [isImageLoading, setIsImageLoading] = useState(false);
 
-  /*
-  Exercise: Add the Upload Widget drop-in script via the Next.js <Script> component
-  Import the UploadWidget from the components folder
-  */
   return (
     <>
       <Script src="https://upload-widget.cloudinary.com/global/all.js" />

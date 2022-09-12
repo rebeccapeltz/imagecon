@@ -3,7 +3,6 @@ const Error = ({ error }) => {
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content text-center">
         <div className="max-w-md">
-          {/* <p className="py-6">{error}</p> */}
           <div className="alert alert-error shadow-lg">
             <div>
               <svg

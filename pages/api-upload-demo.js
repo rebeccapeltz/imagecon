@@ -21,9 +21,6 @@ export default function UploadWidgetDemo() {
       setUploadButtonEnabled(true);
     }
   }
-  /*
-  Exercise: make a POST request (via fetch) to the endpoint responsable for the upload
-  */
   async function uploadToServer(event) {
     event.preventDefault();
     const body = new FormData();
@@ -57,9 +54,6 @@ export default function UploadWidgetDemo() {
               Click the button below to upload an image to your Cloudinary
               account. It will appear on the left, optimised after upload.
             </p>
-            {/* 
-            Exercise: add the onSubmit handler (uploadToServer)
-             */}
             <form
               method="post"
               onChange={uploadToClient}

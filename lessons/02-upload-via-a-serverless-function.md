@@ -10,6 +10,8 @@ You may have noticed that there's an `api` folder in the `pages` folder in our p
 
 There's quite a lot going on, so let's unpack it.
 
+## The "backend" (lambda function)
+
 Every API route has access to a special `config` object which can [change the default configuration](https://nextjs.org/docs/api-routes/request-helpers).
 
 Because we are sending the file in a raw format, we don't need to rely on the built-in bode parser parsing, so we are disabling it:
@@ -50,3 +52,46 @@ export default async function handler(req, res) {
   }
 }
 ```
+
+## The frontend (upload form)
+
+Now that we know what happens in the serverless function, it's time to also discuss how to send data (i.e. an image file) to the function for processing.
+
+First of all we need to create a form. When handling forms we have lots of options, and for the purposes of this workshop we are calling two handlers - onChange and onSubmit.
+
+```html
+<form
+  method="post"
+  onChange="{uploadToClient}"
+  onSubmit="{uploadToServer}"
+></form>
+```
+
+`uploadToClient()` is a method that has access to the selected file via the `<input type="file">` selector by calling `event.target.files`. `files` is an array that's why we select the single file that is being uploaded by calling `event.target.files[0]`. Using React's `useState` hooks we are also creating an [object URL](https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL):
+
+```js
+const img = event.target.files[0];
+setCreateObjectURL(URL.createObjectURL(img));
+```
+
+The form submission is handled using the `uploadToServer()` method which uses [`FormData`](https://developer.mozilla.org/en-US/docs/Web/API/FormData) to construct a key/value pair to be sent to the server via the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch). Since we have created a lambda function which only accepts HTTP POST requests, we need to make sure that the Fetch API sends a POST request, with a payload, where the payload is the image file data.
+
+```js
+async function uploadToServer(event) {
+  event.preventDefault();
+  const body = new FormData();
+  body.append('file', image);
+  try {
+    const response = await (
+      await fetch('/api/upload', {
+        method: 'POST',
+        body,
+      })
+    ).json();
+  } catch (error) {
+    console.error(error);
+  }
+}
+```
+
+And that's it. The "frontend" (i.e. the form) allows us to select the image, and we simply send the image data to the serverless function (the "backend"), which in turn uploads that to Cloudinary..

@@ -6,7 +6,6 @@ export default function VideoPlayer({ source }) {
   useEffect(() => {
     if (!jsLoaded) {
       const script = document.createElement('script');
-      // in order for the below to work, check next.config.js
       script.src = '_next/static/chunks/cld-video-player.min.js';
       script.async = true;
       script.addEventListener('load', () => setJSLoaded(true));

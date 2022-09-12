@@ -100,9 +100,10 @@ To start the project in development mode, please run `npm run dev` from the CLI.
 
 Please find the lesson plan for the workshop below.
 
-- [00 - The Baseline Next.js Project](00-the-baseline-nextjs-project.md)
-- [01 - ]()
-- [02 -]()
+- [00 - The Baseline Next.js Project](lessons/00-the-baseline-nextjs-project.md)
+- [01 - Upload with the Cloudinary Upload Widget](lessons/01-upload-with-the-cloudinary-upload-widget.md)
+- [02 - Upload via a serverless function](lessons/02-upload-via-a-serverless-function.md)
+- [03 - Create an image gallery](lessons/03-create-an-image-gallery.md)
 
 # ℹ️ Support
 
