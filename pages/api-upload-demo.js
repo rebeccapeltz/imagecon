@@ -71,7 +71,6 @@ export default function UploadWidgetDemo() {
                   type="file"
                   name="file"
                 />
-                {/* <pre>{uploadButtonEnabled.toString()}</pre> */}
                 <button
                   disabled={!isImageLoading}
                   className="btn btn-primary btn-sm"

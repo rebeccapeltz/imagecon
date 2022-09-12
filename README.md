@@ -48,6 +48,10 @@ On top of these please have your favourite code editor and terminal ready.
 
 Please login to your [Cloudinary](https://cloudinary.com/users/login) account and note your `CLOUD_NAME`, and copy the `CLOUDINARY_URL` (API Environment variable) string.
 
+## Clone the starter template from GitHub
+
+We have created a starter template, which you can grab from GitHub by running the following command: `npx create-next-app@latest --use-npm --example https://github.com/!!!!!! XOXOXOXOX`
+
 ## Add your environment variables
 
 - Create the following file at the root of the project:
@@ -92,14 +96,11 @@ Then, duplicate the `imagecon-uw` preset, rename the duplicate to `tag-as-coffee
 
 To start the project in development mode, please run `npm run dev` from the CLI.
 
-### Deployment
-
-There are many ways to deploy a Next.js project and the [Next.js documentation](https://nextjs.org/docs/deployment) provides some options. To create a production build and serve it up locally for testing you can first run `npm run build` and then `npm start` from the CLI.
-
 # ✨ The Workshop
 
 Please find the lesson plan for the workshop below.
 
+- [00 - The Baseline Next.js Project](00-the-baseline-nextjs-project.md)
 - [01 - ]()
 - [02 -]()
 

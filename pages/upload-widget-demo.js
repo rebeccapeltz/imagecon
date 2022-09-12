@@ -9,7 +9,7 @@ export default function UploadWidgetDemo() {
   const [isImageLoading, setIsImageLoading] = useState(false);
 
   /*
-  Exercise 1: Add the Upload Widget drop-in script via the Next.js <Script> component
+  Exercise: Add the Upload Widget drop-in script via the Next.js <Script> component
   Import the UploadWidget from the components folder
   */
   return (

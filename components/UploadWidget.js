@@ -7,7 +7,7 @@ const UploadWidget = ({ callback }) => {
       {
         cloudName: process.env.NEXT_PUBLIC_CLOUD_NAME,
         uploadPreset: 'imagecon-uw',
-        sources: ['local'],
+        sources: ['local', 'url', 'camera'],
         showAdvancedOptions: true,
         getUploadPresets,
       },
