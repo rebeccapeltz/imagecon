@@ -15,6 +15,8 @@ export default function AdvancedVideoDemo() {
   });
   const myVideo = cld.video('imagecon/ship');
   myVideo
+    .delivery(quality('auto'))
+    .delivery(format('auto'))
     .resize(fill().width(500).height(500).gravity(Gravity.autoGravity()))
     .overlay(
       source(
@@ -24,9 +26,7 @@ export default function AdvancedVideoDemo() {
       ).position(
         new Position().gravity(compass('north_east')).offsetX(5).offsetY(5)
       )
-    )
-    .delivery(quality('auto'))
-    .delivery(format('auto'));
+    );
 
   return (
     <>

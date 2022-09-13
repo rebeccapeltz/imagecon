@@ -16,7 +16,15 @@ myVideo
     ).position(
       new Position().gravity(compass('north_east')).offsetX(5).offsetY(5)
     )
-  );
+  )
+  .delivery(quality('auto'))
+  .delivery(format('auto'));
 ```
 
 The `autoGravity()` method is new. As you can see we are reducing the dimensions of the video to `500x500`. That alone would just create a crop, which, in the case of a video may not be the right crop. In fact, in our example, we have a video of a ship. With a normal crop, we are missing out on the action because we are not always seeing the ship. With `autoGravity()` we can crop the video and follow the action. We call this [content aware cropping](https://cloudinary.com/blog/automatically_crop_videos_without_losing_focus).
+
+# Video formats
+
+Furthermore, it is also possible to pick different formats for videos, automatically using Cloudinary.
+
+The `f_auto` option (`delivery(format('auto')`) in order to perform automatic format and codec selection based on the requesting browser. For example, with the automatic format feature, in most cases Chrome users would receive a VP9-encoded WebM file, while Safari users would receive an HEVC-encoded MP4 file. If a browser does not support either of these formats then the video is delivered as an H.264-encoded MP4 file (which is supported by almost every browser).
