@@ -25,12 +25,12 @@ const Navigation = () => {
       icon: '📹',
       subItems: [
         {
-          text: 'Video Player',
-          href: '/video-player-demo',
-        },
-        {
           text: 'Advanced Video Component',
           href: '/advanced-video',
+        },
+        {
+          text: 'Video Player',
+          href: '/video-player-demo',
         },
       ],
     },

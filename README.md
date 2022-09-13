@@ -104,6 +104,7 @@ Please find the lesson plan for the workshop below.
 - [01 - Upload with the Cloudinary Upload Widget](lessons/01-upload-with-the-cloudinary-upload-widget.md)
 - [02 - Upload via a serverless function](lessons/02-upload-via-a-serverless-function.md)
 - [03 - Create an image gallery](lessons/03-create-an-image-gallery.md)
+- [04 - Displaying videos](lessons/04-displaying-videos.md)
 
 # ℹ️ Support
 

@@ -24,10 +24,7 @@ const CldImage = ({ publicId, gallery = false }) => {
       .overlay(
         source(
           image('imagecon/cloudinary-blue').transformation(
-            new Transformation()
-              .resize(scale(70))
-              .adjust(opacity(80))
-              .adjust(brightness(500))
+            new Transformation().resize(scale(50)).adjust(opacity(90))
           )
         ).position(
           new Position().gravity(compass('south_east')).offsetX(5).offsetY(5)

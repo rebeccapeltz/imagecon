@@ -5,6 +5,7 @@ import { fill, scale } from '@cloudinary/url-gen/actions/resize';
 import { Gravity, Position } from '@cloudinary/url-gen/qualifiers';
 import { compass } from '@cloudinary/url-gen/qualifiers/gravity';
 import { image } from '@cloudinary/url-gen/qualifiers/source';
+import { format, quality } from '@cloudinary/url-gen/actions/delivery';
 
 export default function AdvancedVideoDemo() {
   const cld = new Cloudinary({
@@ -15,7 +16,6 @@ export default function AdvancedVideoDemo() {
   const myVideo = cld.video('imagecon/ship');
   myVideo
     .resize(fill().width(500).height(500).gravity(Gravity.autoGravity()))
-    // .resize(fill().width(500).height(500))
     .overlay(
       source(
         image('imagecon/cloudinary-blue').transformation(
@@ -24,7 +24,9 @@ export default function AdvancedVideoDemo() {
       ).position(
         new Position().gravity(compass('north_east')).offsetX(5).offsetY(5)
       )
-    );
+    )
+    .delivery(quality('auto'))
+    .delivery(format('auto'));
 
   return (
     <>
