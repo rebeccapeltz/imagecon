@@ -105,6 +105,7 @@ Please find the lesson plan for the workshop below.
 - [02 - Upload via a serverless function](lessons/02-upload-via-a-serverless-function.md)
 - [03 - Create an image gallery](lessons/03-create-an-image-gallery.md)
 - [04 - Displaying videos](lessons/04-displaying-videos.md)
+- [05 - Cloudinary video player](lessons/05-cloudinary-video-player.md)
 
 # ℹ️ Support
 
