@@ -10,7 +10,9 @@ The basic setup also includes [TailwindCSS](https://tailwindcss.com) and we have
 
 > A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup.
 
-We have also setup [DaisyUI](https://daisyui.com) with the project which is "The most popular, free and open-source Tailwind CSS component library".
+We have also setup [DaisyUI](https://daisyui.com) with the project which is:
+
+> The most popular, free and open-source Tailwind CSS component library.
 
 # Create the basic application
 
@@ -55,6 +57,8 @@ While there are many ways to architect a Next.js application there are a couple 
 - `Layout.js`
 - `Navigation.js`
 - `Footer.js`
+
+> Note that there are more files added to the `components` folder, some of them are helper components (such as `DisplayError.js`), some of them will be used in later parts of the workshop and edited by you (such as `CldImage.js`).
 
 ### Layout.js
 
@@ -104,3 +108,7 @@ export default function Layout({ children }) {
 # Pages and routing
 
 Next.js utilises [file based routing](https://nextjs.org/docs/routing/introduction) and as such for us to create a new route means that we can just create a new file. All such files should be added to the `pages` folder. We have added all the required files already, although they are missing content, which we'll add together.
+
+# Let's get started
+
+[✍️ Lesson 01: Upload with the Cloudinary Upload Widget](./01-upload-with-the-cloudinary-upload-widget.md)

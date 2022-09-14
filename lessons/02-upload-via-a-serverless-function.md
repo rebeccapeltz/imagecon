@@ -95,3 +95,7 @@ async function uploadToServer(event) {
 ```
 
 And that's it. The "frontend" (i.e. the form) allows us to select the image, and we simply send the image data to the serverless function (the "backend"), which in turn uploads that to Cloudinary..
+
+# Next lesson
+
+[✍️ Lesson 03: Create an image gallery](./03-create-an-image-gallery.md)

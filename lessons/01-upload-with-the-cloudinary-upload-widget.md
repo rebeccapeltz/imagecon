@@ -39,3 +39,7 @@ const configureAndOpenWidget = () => {
 - `getUploadPresets`. This option lists additional presets (in our case `tag-as-coffee`) allowing users doing the upload to select from a list of presets.
 
 All images uploaded via the Upload Widget will go to the Cloudinary account specified using the `cloudName` parameter.
+
+# Next lesson
+
+[✍️ Lesson 02: Upload via a serverless function](./02-upload-via-a-serverless-function.md)

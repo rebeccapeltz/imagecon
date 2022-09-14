@@ -30,3 +30,7 @@ Furthermore, it is also possible to pick different formats for videos, automatic
 The `f_auto` option (`delivery(format('auto')`) can be used to perform automatic format and codec selection based on the requesting browser. For example, with the automatic format feature, in most cases Chrome users would receive a VP9-encoded WebM file, while Safari users would receive an HEVC-encoded MP4 file. If a browser does not support either of these formats then the video is delivered as an H.264-encoded MP4 file (which is supported by almost every browser).
 
 Last but not least, with `.delivery(format('auto'))` we can also reduce the quality of the video in a way that it won't be visible to us, humans but it will lead to us saving many many kilobytes.
+
+# Next lesson
+
+[✍️ Lesson 05: Cloudinary Video Player](./05-cloudinary-video-player.md)
