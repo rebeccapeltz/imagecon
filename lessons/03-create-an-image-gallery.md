@@ -68,7 +68,7 @@ We would like to demonstrate another cool Cloudinary feature. When you run the s
 
 SWR is not a new concept (it was first discussed in 2010), however it got very popular recently due to its [implementation on the Vercel platform](https://swr.vercel.app). The concept is simple - first we return data from the cache (stale), and in the background we make a request to a resource (revalidate) and update the dataset. What's amazing about this approach is that it works pretty much out of the box using Vercel and Next.js. (Do note that you need to install it separately via `npm i swr`).
 
-The process is simple. Open the application in two separate windows. In one, open the image gallery, on the second one, open the Upload Widget, ⚠️ _make sure to select the upload widget 'tag-as-coffee' preset PRIOR to selecting the image to upload_ ⚠️. Once the image has finished uploading, it'll also be added to the coffee collection. Without having to refresh the gallery, the new image should appear after a few seconds.
+The process is simple. Open the application in two separate windows. In one, open the image gallery, on the second one, open the Upload Widget, ⚠️ _make sure to select the upload widget 'tag-as-coffee' preset *PRIOR* to selecting the image to upload_ ⚠️. Once the image has finished uploading, it'll also be added to the coffee collection. Without having to refresh the gallery, the new image should appear after a few seconds.
 
 # Next lesson
 
