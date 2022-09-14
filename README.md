@@ -23,7 +23,7 @@ During the workshop we'll discuss the following topics:
 
 # 😊 Before the workshop
 
-To have a smooth experience during the workshop, please make sure that you follow a few simple suggestions. Pleae make sure that your environment is setup with the appropriate version of Node.js installed (more details in the [Setup](#-setup) section).
+To have a smooth experience during the workshop, please make sure that you follow a few simple suggestions. Please make sure that your environment is setup with the appropriate version of Node.js installed (more details in the [Setup](#-setup) section).
 
 Please also make sure to have installed the following:
 
