@@ -55,7 +55,7 @@ we create a `myImage` variable that has a number of transformations. The image d
 
 The `CldImage` component returns `<AdvancedImage>` which is the aforementioned component exposed by the `@cloudinary/react` package. We also add the `responsive()` and `placeholder()` plugins to that component along with the `myImage` component as the `cldImg` `prop` creating a responsive image component.
 
-All that's left is to use this `CldImage` component. But the question is, how do we gather the images? Astute readers may have noticed that the `CldImage` component also has capabilities to work with images outside the gallery (determined by the `gallery` `prop`). In fact, when you first opened the starter, the images (including the image on the `404` page makes use the `CldImage` component. Don't believe us? Check out the implementation of `404.js` and seee it in action here: [localhost:3000/does-not-exist](localhost:3000/does-not-exist).)
+All that's left is to use this `CldImage` component. But the question is, how do we gather the images? Astute readers may have noticed that the `CldImage` component also has capabilities to work with images outside the gallery (determined by the `gallery` `prop`). In fact, when you first opened the starter, the images (including the image on the `404` page makes use the `CldImage` component. Don't believe us? Check out the implementation of `404.js` and seee it in action here: [http://localhost:3000/does-not-exist](http://localhost:3000/does-not-exist).)
 
 # Serverless function to the rescue
 
@@ -68,7 +68,7 @@ We would like to demonstrate another cool Cloudinary feature. When you run the s
 
 SWR is not a new concept (it was first discussed in 2010), however it got very popular recently due to its [implementation on the Vercel platform](https://swr.vercel.app). The concept is simple - first we return data from the cache (stale), and in the background we make a request to a resource (revalidate) and update the dataset. What's amazing about this approach is that it works pretty much out of the box using Vercel and Next.js. (Do note that you need to install it separately via `npm i swr`).
 
-The process is simple. Open the application in two separate windows. In one, open the image gallery, on the second one, open the Upload Widget, _make sure to select the upload widget 'tag-as-coffee' preset PRIOR to selecting the image to upload_. Once the image has finished uploading, it'll also be added to the coffee collection. Without having to refresh the gallery, the new image should appear after a few seconds.
+The process is simple. Open the application in two separate windows. In one, open the image gallery, on the second one, open the Upload Widget, ⚠️ _make sure to select the upload widget 'tag-as-coffee' preset PRIOR to selecting the image to upload_ ⚠️. Once the image has finished uploading, it'll also be added to the coffee collection. Without having to refresh the gallery, the new image should appear after a few seconds.
 
 # Next lesson
 
