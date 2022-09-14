@@ -7,6 +7,8 @@ In this section of the workshop we'll take a look at how to work with videos. Lu
 ```js
 const myVideo = cld.video('imagecon/ship');
 myVideo
+  .delivery(quality('auto'))
+  .delivery(format('auto'))
   .resize(fill().width(500).height(500).gravity(Gravity.autoGravity()))
   .overlay(
     source(
@@ -16,9 +18,7 @@ myVideo
     ).position(
       new Position().gravity(compass('north_east')).offsetX(5).offsetY(5)
     )
-  )
-  .delivery(quality('auto'))
-  .delivery(format('auto'));
+  );
 ```
 
 The `autoGravity()` method is new. As you can see we are reducing the dimensions of the video to `500x500`. That alone would just create a crop, which, in the case of a video may not be the right crop. In fact, in our example, we have a video of a ship. With a normal crop, we are missing out on the action because we are not always seeing the ship. With `autoGravity()` we can crop the video and follow the action. We call this [content aware cropping](https://cloudinary.com/blog/automatically_crop_videos_without_losing_focus).
