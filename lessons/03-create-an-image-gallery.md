@@ -53,9 +53,9 @@ This may look complex but in reality it's nothing to worry about. First off, the
 
 we create a `myImage` variable that has a number of transformations. The image dimensions are reduced to `400x400`. Then we add a new overlay to the image - we place the cloudinary logo (identified by `imagecon/cloudinary-blue`) as a watermark to the `south_east` corner, 5px aligned from the bottom right corner. The final image also benefits from `f_auto` and `q_auto` via ` .delivery(format('auto')).delivery(quality('auto'));`
 
-The `CldImage` component returns `<AdvancedImage>` which is the aforementioned component exposed by the `@cloudinary/react` package. We also add the `responsive()` and `placeholder()` plugins to that component along with the `myImage` component as the `cldImg` prop creating a responsive image component.
+The `CldImage` component returns `<AdvancedImage>` which is the aforementioned component exposed by the `@cloudinary/react` package. We also add the `responsive()` and `placeholder()` plugins to that component along with the `myImage` component as the `cldImg` `prop` creating a responsive image component.
 
-All that's left is to use this `CldImage` component. But the question is, how do we gather the images? Astute readers may have noticed that the `CldImage` component also has capabilities to work with images outside the gallery (determined by the `gallery` prop). In fact, when you first opened the starter, the images (including the image on the `404` page makes use the `CldImage` component. Don't believe us? Check out the implementation of `404.js` and seee it in action here: [localhost:3000/does-not-exist](localhost:3000/does-not-exist).)
+All that's left is to use this `CldImage` component. But the question is, how do we gather the images? Astute readers may have noticed that the `CldImage` component also has capabilities to work with images outside the gallery (determined by the `gallery` `prop`). In fact, when you first opened the starter, the images (including the image on the `404` page makes use the `CldImage` component. Don't believe us? Check out the implementation of `404.js` and seee it in action here: [localhost:3000/does-not-exist](localhost:3000/does-not-exist).)
 
 # Serverless function to the rescue
 
