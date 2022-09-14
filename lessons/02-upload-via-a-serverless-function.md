@@ -98,4 +98,4 @@ And that's it. The "frontend" (i.e. the form) allows us to select the image, and
 
 # Next lesson
 
-[✍️ Lesson 03: Create an image gallery](./03-create-an-image-gallery.md)
+[Lesson 03: Create an image gallery](./03-create-an-image-gallery.md)

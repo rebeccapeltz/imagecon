@@ -111,4 +111,4 @@ Next.js utilises [file based routing](https://nextjs.org/docs/routing/introducti
 
 # Let's get started
 
-[✍️ Lesson 01: Upload with the Cloudinary Upload Widget](./01-upload-with-the-cloudinary-upload-widget.md)
+[Lesson 01: Upload with the Cloudinary Upload Widget](./01-upload-with-the-cloudinary-upload-widget.md)

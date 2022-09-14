@@ -42,4 +42,4 @@ All images uploaded via the Upload Widget will go to the Cloudinary account spec
 
 # Next lesson
 
-[✍️ Lesson 02: Upload via a serverless function](./02-upload-via-a-serverless-function.md)
+[Lesson 02: Upload via a serverless function](./02-upload-via-a-serverless-function.md)

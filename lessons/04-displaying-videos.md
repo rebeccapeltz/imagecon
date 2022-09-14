@@ -33,4 +33,4 @@ Last but not least, with `.delivery(format('auto'))` we can also reduce the qual
 
 # Next lesson
 
-[✍️ Lesson 05: Cloudinary Video Player](./05-cloudinary-video-player.md)
+[Lesson 05: Cloudinary Video Player](./05-cloudinary-video-player.md)
