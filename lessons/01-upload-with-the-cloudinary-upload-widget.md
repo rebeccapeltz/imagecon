@@ -8,7 +8,6 @@ Simply put, it is a highly configurable, drop-in upload tool that you can integr
 
 In this page we are showing how to integrate the Upload Widget with Next.js. For abstraction we will also add a component called `UploadWidget` which will, in turn, use a service. The purpose of these is to smoothly integrate the upload widget.
 
-## `utils/CloudinaryService.js`
 
 There are multiple [methods exposed via the upload widget JavaScript library](https://cloudinary.com/documentation/upload_widget_reference#initialization_methods). The one that we are using here is `openUploadWidget` which creates a widget and then opens it. It also accepts a list of options where we can [apply customisations](https://cloudinary.com/documentation/upload_widget) to the upload widget.
 
@@ -39,6 +38,10 @@ const configureAndOpenWidget = () => {
 - `getUploadPresets`. This option lists additional presets (in our case `tag-as-coffee`) allowing users doing the upload to select from a list of presets.
 
 All images uploaded via the Upload Widget will go to the Cloudinary account specified using the `cloudName` parameter.
+
+## `utils/CloudinaryService.js`
+
+<I would explain what this service does. I moved out from under UploadWidget so you might want to reference from there>
 
 # Next lesson
 

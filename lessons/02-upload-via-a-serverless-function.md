@@ -2,7 +2,7 @@
 
 In this exercise we'll take a look at how to create server-side uploads using serverless functions. Using the combination of Next.js and Vercel we can write [servless (lambda) functions](https://vercel.com/docs/concepts/functions/serverless-functions) with ease.
 
-Such functions are useful because they are executed on a server and therefore we can created signed uploads to Cloudinary because this time we can not only specify a cloud name but we can safely add the Cloudinary API key and secret as well. There are many languages that you can write a serverless function in, we'll be utilising JavaScript and leverage [Cloudinary's Node.js SDK](https://cloudinary.com/documentation/node_integration).
+Such functions are useful because they are executed on a server, and therefore we can created signed uploads to Cloudinary because this time, we can not only specify a cloud name, but we can safely add the Cloudinary API key and secret as well. There are many languages that you can write a serverless function in, we'll be utilising JavaScript and leverage [Cloudinary's Node.js SDK](https://cloudinary.com/documentation/node_integration).
 
 There are two steps that we need to complete. The first one is to create the serverless function, the second is to create a page to invoke that function.
 
@@ -14,7 +14,7 @@ There's quite a lot going on, so let's unpack it.
 
 Every API route has access to a special `config` object which can [change the default configuration](https://nextjs.org/docs/api-routes/request-helpers).
 
-Because we are sending the file in a raw format, we don't need to rely on the built-in bode parser parsing, so we are disabling it:
+Because we are sending the file in a raw format, we don't need to rely on the built-in body parser parsing, so we are disabling it:
 
 ```js
 export const config = {
@@ -41,7 +41,7 @@ const promisifyFormParser = (req) => {
 };
 ```
 
-The `uploadToCloudinary` function is where the main logic happens. We take the file sent via the upload form, and upload it to cloudinary. Because we have a `.env.local` file with a `CLOUDINARY_URL` environment variable, we don't need to configure anything and all files will be uploaded to the account specified in that variable. Do note that we are also doing some cleanup to avoid cluttering the filesystem henceforth we call `fs.unlinkSync` there which removes the file from the temporarily location when the file is successfully uploaded.
+The `uploadToCloudinary` function is where the main logic happens. We take the file sent via the upload form, and upload it to cloudinary. Because we have a `.env.local` file with a `CLOUDINARY_URL` environment variable, we don't need to configure anything and all files will be uploaded to the account specified in that variable. Do note that we are also doing some cleanup to avoid cluttering the filesystem. Henceforth we call `fs.unlinkSync` there which removes the file from the temporarily location when the file is successfully uploaded.
 
 Every API route (lambda function) must have a `handler` function which is going to get executed when someone accesses the API route. In our case we make sure that this only happens when someone is using the POST HTTP method:
 
@@ -52,6 +52,10 @@ export default async function handler(req, res) {
   }
 }
 ```
+<Does the handler have to be aysnc (it used to). If so, good to mention that.>
+
+<Do you want to mention the API endpoint that gets created for the serverless function or how to test locally?
+http://localhost:port/api/serverless-fn>
 
 ## The frontend (upload form)
 
@@ -74,6 +78,8 @@ const img = event.target.files[0];
 setCreateObjectURL(URL.createObjectURL(img));
 ```
 
+<I didn't see you using the createObjectURL in code. It looks like you uploaded the image variable, but if you are it might be interesting to show them what one of these URL's looks like if they haven't worked with createObjectURL or media before blob:https://yari-demos.prod.mdn.mozit.cloud/48c5ee51-3e0f-4178-8386-3e545b3bada5>
+
 The form submission is handled using the `uploadToServer()` method which uses [`FormData`](https://developer.mozilla.org/en-US/docs/Web/API/FormData) to construct a key/value pair to be sent to the server via the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch). Since we have created a lambda function which only accepts HTTP POST requests, we need to make sure that the Fetch API sends a POST request, with a payload, where the payload is the image file data.
 
 ```js
@@ -94,7 +100,7 @@ async function uploadToServer(event) {
 }
 ```
 
-And that's it. The "frontend" (i.e. the form) allows us to select the image, and we simply send the image data to the serverless function (the "backend"), which in turn uploads that to Cloudinary..
+And that's it. The "frontend" (i.e. the form) allows us to select the image, and we simply send the image data to the serverless function (the "backend"), which in turn uploads that to Cloudinary.
 
 # Next lesson
 
